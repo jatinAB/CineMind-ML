@@ -1,43 +1,117 @@
-# The-Movie-Cinema
+# 🎬 CineMind-ML
+  
+**CineMind-ML** is an **AI-powered movie recommendation system** built using **Flask** and **Machine Learning**.  
+It recommends movies based on user preferences, similarity scores, and popularity metrics using **content-based filtering**, **collaborative filtering**, and **sentiment analysis** on IMDb reviews.
 
-![Python](https://img.shields.io/badge/Python-3.8-blueviolet)
-![Framework](https://img.shields.io/badge/Framework-Flask-red)
-![Frontend](https://img.shields.io/badge/Frontend-HTML/CSS/JS-green)
-![API](https://img.shields.io/badge/API-TMDB-fcba03)
+The app fetches real-time movie data such as **overview, genre, rating, runtime, top cast, and posters** using the **TMDB API**, while also performing **web scraping** to extract user reviews from IMDb for **sentiment analysis** using `BeautifulSoup`.
 
-This application provides all the details of the requested movie such as overview, genre, release date, rating, runtime, top cast, reviews, recommended movies, etc.
+If a movie doesn’t appear in auto-suggestions, simply type the full name and hit **Enter** — CineMind-ML will handle it for you, even with small typos!  
 
-The details of the movies(title, genre, runtime, rating, poster, etc) are fetched using an API by TMDB, https://www.themoviedb.org/documentation/api, and using the IMDB id of the movie in the API, I did web scraping to get the reviews given by the user in the IMDB site using `beautifulsoup4` and performed sentiment analysis on those reviews.
 
-## Link to the application
+## ⚙️ Features  
 
-Check out the live demo: https://tmc.kishanlal.dev/
+✅ Personalized movie recommendations using ML models  
+✅ Real-time data fetched from TMDB API  
+✅ Sentiment analysis on IMDb reviews  
+✅ Interactive and responsive web interface  
+✅ Supports fuzzy search for partial or misspelled movie names  
 
-If you can't find the movie you're searching for through auto-suggestions while typing, there's no need to worry. Simply type the name of the movie and press "enter". Even if you make some typos, it should still work fine.
+---
 
-## 'Invalid Request' Error
+## 🔑 How to Get a TMDB API Key  
 
-If you're getting invalid request error in your application, kindly go through this issue - https://github.com/kishan0725/The-Movie-Cinema/issues/2
+1. Visit [The Movie Database](https://www.themoviedb.org/) and create an account.  
+2. Navigate to your **Account Settings → API** section.  
+3. Fill out the application form for a free API key.  
+4. Use `"NA"` if asked for a website URL.  
+5. Once approved, you’ll find your **API Key (v3 auth)** under the API section.  
 
-## How to get the API key?
+---
 
-Create an account in https://www.themoviedb.org/, click on the `API` link from the left hand sidebar in your account settings and fill all the details to apply for API key. If you are asked for the website URL, just give "NA" if you don't have one. You will see the API key in your `API` sidebar once your request is approved.
+## 🧩 How to Run the Project  
 
-## How to run the project?
+1️⃣ **Clone the repository:**  
+```bash
+git clone https://github.com/jatinAB/CineMind-ML.git
+cd CineMind-ML
+````
 
-1. Clone this repository in your local system.
-2. Install all the libraries mentioned in the [requirements.txt](https://github.com/kishan0725/The-Movie-Cinema/blob/master/requirements.txt) file with the command `pip install -r requirements.txt`.
-3. Replace YOUR_API_KEY at line no. 2 of `static/recommend.js` file.
-4. Open your terminal/command prompt from your project directory and run the `main.py` file by executing the command `python main.py`.
-5. Go to your browser and type `http://127.0.0.1:5000/` in the address bar.
-6. Hurray! That's it.
+2️⃣ **Install dependencies:**
 
-### Sources of the datasets 
+```bash
+pip install -r requirements.txt
+```
+
+3️⃣ **Set up your TMDB API key:**
+
+* Replace `YOUR_API_KEY` inside `static/recommend.js` (line 2).
+
+4️⃣ **Run the Flask app:**
+
+```bash
+python main.py
+```
+
+5️⃣ **Open in browser:**
+Visit `http://127.0.0.1:5000/`
+
+🎉 That’s it — your ML-powered movie recommender is live!
+
+---
+
+## 🧾 Datasets Used
 
 1. [IMDB 5000 Movie Dataset](https://www.kaggle.com/carolzhangdc/imdb-5000-movie-dataset)
 2. [The Movies Dataset](https://www.kaggle.com/rounakbanik/the-movies-dataset)
-3. [List of movies in 2018](https://en.wikipedia.org/wiki/List_of_American_films_of_2018)
-4. [List of movies in 2019](https://en.wikipedia.org/wiki/List_of_American_films_of_2019)
-5. [List of movies in 2020](https://en.wikipedia.org/wiki/List_of_American_films_of_2020)
+3. [List of American Films – 2018](https://en.wikipedia.org/wiki/List_of_American_films_of_2018)
+4. [List of American Films – 2019](https://en.wikipedia.org/wiki/List_of_American_films_of_2019)
+5. [List of American Films – 2020](https://en.wikipedia.org/wiki/List_of_American_films_of_2020)
 
-Please do ⭐ the repository, if it helped you in anyway.
+---
+
+## 🧠 Machine Learning Techniques
+
+* **Content-Based Filtering:** Recommends movies similar to those the user liked based on metadata and cosine similarity.
+* **Collaborative Filtering:** Suggests movies by learning from user-item interaction patterns.
+* **Sentiment Analysis:** Classifies IMDb reviews into positive or negative using text mining and NLP.
+
+---
+
+## 📸 Screenshots
+
+<p align="center">
+  <img src="Screenshot 2023-10-07 200822.png" alt="CineMind Homepage" width="750">
+</p>
+
+<p align="center">
+  <img src="Screenshot 2023-10-07 201035.png" alt="Recommendations Section" width="750">
+</p>
+
+---
+
+## 🧰 Tech Stack
+
+* **Frontend:** HTML, CSS, JavaScript
+* **Backend:** Flask (Python)
+* **Machine Learning:** Scikit-learn, Pandas, NumPy, NLP
+* **APIs:** TMDB API
+* **Web Scraping:** BeautifulSoup4
+* **Data Visualization:** Matplotlib, Seaborn
+
+---
+
+## 🧑‍💻 Author
+
+**Jatin Bandekar**
+📧 bandekarjatin02@gmail.com
+
+---
+
+## ⭐ Acknowledgments
+
+* [TMDB API](https://www.themoviedb.org/documentation/api)
+* [IMDB](https://www.imdb.com/)
+* [Scikit-learn](https://scikit-learn.org/stable/)
+
+```
+anyway.
